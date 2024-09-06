@@ -82,7 +82,7 @@ footer {
     border-radius: 15px;
     height: 20vh; /* Mantén la altura si lo deseas */
     display: flex; 
-    justify-content: center; /* Centra horizontalmente el contenido del footer */
+    justify-content: center; 
     align-items: center; /* Centra verticalmente el contenido del footer */
 }
 
