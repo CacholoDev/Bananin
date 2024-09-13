@@ -1,5 +1,6 @@
 body {
     background-color: rgb(54, 54, 54);
+    
 }
 
 #logo {
@@ -13,7 +14,7 @@ body {
     #logo {
         width: 100px;
         height: 100px;
-        /* Hacer el logo más pequeño en pantallas pequeñas */
+       
     }
 }
 
@@ -24,6 +25,9 @@ body {
     background: #e0b531;
     padding: 5vh;
     justify-content: space-around;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
 }
 
 .menu {
@@ -244,9 +248,35 @@ a {
 /* Define el estilo inicial para el h1 */
 /* Desactiva la animación para probar con JavaScript */
 #main-title {
-    font-size: 1.85rem;
+    font-size: x-large;
     white-space: nowrap;
     overflow: hidden;
     /* border-right: 0.15em solid orange;  */
      animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; 
+}
+
+
+.galeria {
+    display: flex;
+    justify-content: center;
+    height: 430px;
+    min-height: 20vh; /* Igual que en los otros section */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    margin-bottom: 3vh;
+}
+
+.galeria img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+    aspect-ratio: 1/0.8;
+}
+
+.galeria img:hover {
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
 }
