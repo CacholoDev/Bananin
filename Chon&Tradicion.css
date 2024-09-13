@@ -1,52 +1,68 @@
-body{
+body {
     background-color: rgb(54, 54, 54);
 }
+
 #logo {
     width: 150px;
     height: 150px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
+@media (max-width: 768px) {
+    #logo {
+        width: 100px;
+        height: 100px;
+        /* Hacer el logo más pequeño en pantallas pequeñas */
+    }
+}
+
+
+
 .logo {
-    
     border-radius: 15px;
     background: #e0b531;
-    display: flex;
     padding: 5vh;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
 }
 
 .menu {
-    
     display: inline-flex;
     justify-content: space-around;
     color: brown;
 }
 
-
-
 .oferta {
     border-radius: 15px;
     background-color: #e0b531;
-    height: 45vh;
+    height: 25vh;
     display: flex;
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan en pantallas pequeñas */
     justify-content: space-around;
     align-items: center;
     background-image: url(img/trenza.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-   
 }
 
-.buTrenza {
-    display: flex;
-    flex-direction: column;
+.oferta,
+.redonda {
+    height: auto;
+    /* Permite que el contenedor se ajuste a su contenido */
+    min-height: 20vh;
+    /* Opcional: establece una altura mínima */
 }
+
+.buTrenza,
 .butSection {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
+    /* Centra los botones dentro del contenedor */
+    text-align: center;
 }
 
 hr {
@@ -61,73 +77,176 @@ hr {
     background-size: cover;
     background-position: center;
     background-color: #e0b531;
-    height: 45vh;
+    height: 20vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    
-}
-
-
-.buredonda{
-    
-    display: flex;
-    
 }
 
 footer {
-    background-color: #E0B531; /* Color de fondo del footer */
+    background: linear-gradient(135deg, #d4ac33 0%, #0f0f0f 100%);
+    /* Gradiente de fondo */
     padding: 20px;
     border-radius: 15px;
-    height: 20vh; /* Mantén la altura si lo deseas */
-    display: flex; 
-    justify-content: center; 
-    align-items: center; /* Centra verticalmente el contenido del footer */
+    height: auto;
+    /* Mantiene la altura adaptativa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Centra verticalmente el contenido del footer */
 }
 
 .footi {
     display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    gap: 20px; /* Espacio entre los íconos */
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+    flex-wrap: wrap;
+    /* Permite que los elementos se envuelvan en pantallas más pequeñas */
+    gap: 20px;
+    /* Espacio entre los íconos */
 }
 
 .social-link {
     text-decoration: none;
     display: flex;
-    flex-direction: column; /* Coloca el texto debajo del ícono */
-    align-items: center; /* Centra el texto y el ícono */
-    color: white; /* Color del texto y el ícono */
+    flex-direction: column;
+    /* Coloca el texto debajo del ícono */
+    align-items: center;
+    /* Centra el texto y el ícono */
+    color: white;
+    /* Color del texto y el ícono */
+    transition: transform 0.3s ease;
+    /* Transición para el tamaño */
 }
 
 .social-link i {
-    
-    font-size: 70px; /* Tamaño de los íconos */
+    font-size: 50px;
+    /* Tamaño de los íconos */
     transition: color 0.3s ease;
 }
 
 .social-link i:hover {
-    color: #333; /* Color al pasar el ratón por encima */
+    color: #333;
+    /* Color al pasar el ratón por encima */
 }
 
 .social-link h4 {
-     /* Espacio entre el ícono y el texto */
-    font-size: 2.5vh;
+    font-size: 1.2rem;
+    margin: 0;
+    /* Quita el margen por defecto */
+}
+
+@media (max-width: 991px) {
+    .social-link i {
+        font-size: 40px;
+        /* Tamaño más pequeño de los íconos en pantallas medianas */
+    }
+
+    .social-link h4 {
+        font-size: 0.8rem;
+        /* Tamaño más pequeño del texto en pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .social-link i {
+        font-size: 30px;
+        /* Tamaño más pequeño de los íconos en pantallas pequeñas */
+    }
+
+    .social-link h4 {
+        font-size: 1rem;
+        /* Tamaño más pequeño del texto en pantallas pequeñas */
+    }
+    .oferta, .redonda {
+        flex-direction: column; /* Cambia la dirección del flex a columna en pantallas pequeñas */
+    }
+
+    .oferta h3, .redonda h3 {
+        font-size: 1.5rem; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+
+    .buTrenza, .butSection {
+        width: 100%; /* Asegura que los contenedores ocupen todo el ancho disponible */
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        width: 100%; /* Botones ocupan todo el ancho disponible */
+        max-width: none; /* Quita el límite de ancho máximo */
+    }
+    .social-link i {
+        font-size: 25px;
+        /* Tamaño más pequeño de los íconos en pantallas muy pequeñas */
+    }
+
+    .social-link h4 {
+        font-size: 0.9rem;
+        /* Tamaño más pequeño del texto en pantallas muy pequeñas */
+    }
 }
 
 #inRosa {
-    color:rgb(253, 12, 221);
+    color: rgb(253, 12, 221);
 }
 
 #inRed {
     color: rgb(185, 7, 7);
 }
+
 #inBlue {
     color: rgb(10, 78, 141);
 }
 
-a{
+#contacto {
+    color: rgb(49, 145, 69);
+}
+
+a {
     color: black;
     text-decoration: none;
+}
+
+.btn {
+    width: 100%;
+    /* Asegura que los botones ocupen todo el ancho disponible */
+    max-width: 200px;
+    /* Opcional: límite en el ancho máximo del botón */
+}
+
+/* animacio en botons*/
+
+.btn:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+}
+
+/* h3 bonitos do oferta*/
+
+.oferta h3 {
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+/* banner */
+.alert {
+    margin-bottom: 20px;
+}
+
+/*JS*/
+
+/* Define el estilo inicial para el h1 */
+/* Desactiva la animación para probar con JavaScript */
+#main-title {
+    font-size: 1.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    /* border-right: 0.15em solid orange;  */
+     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; 
 }
